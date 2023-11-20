@@ -55,21 +55,22 @@ body {
   text-decoration: none;
   color: white;
 }
-
 #welcome-section {
+  position: relative;
   height: 100vh;
-  width: 100%;
   background: linear-gradient(#00b4d8 0%, #90e0ef 40%, #caf0f8 100%);
-  box-sizing: border-box;
 }
 .sky {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  position: relative;
   width: 100%;
+  gap:0px;
 }
+
 /* .sun_rays {
   position: absolute;
   left:-5px;
@@ -95,27 +96,24 @@ body {
   height: 100px;
 }
 
-.cloudsWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 20px;
-  position: relative;
-  width: 100%;
-}
-.cloud-section,
-.cloud-section2 {
-  /* top: -90px;
-    margin: 0; */
+
+.cloud-section {
+  top: -90px;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  position: relative;
   height: 100px;
+  gap:0px;
+
 }
 
+.cloud-section2 {
+  position: absolute;
+  top: 150px;
+}
 .upper_cloud {
   height: 150px;
   position: absolute;
@@ -185,17 +183,13 @@ body {
   animation: cloudMovement linear 8s infinite;
   animation-delay: 8s;
 }
-.welcome-page-bottom {
-  position: relative;
-  box-sizing: border-box;
-}
+
 .introduction {
   position: absolute;
-  top: -60px;
+  bottom: 420px;
   right: 320px;
   z-index: 3;
   background-color: white;
-  font-size: 25px;
   width: 600px;
   text-align: center;
   height: 300px;
@@ -203,8 +197,9 @@ body {
   opacity: 0.5;
 }
 .introduction h1 {
+  top: 130px;
+  font-size: 30px;
   position: absolute;
-  top: 100px;
   right: 18px;
   color: rgb(122, 55, 223);
   font-family: monospace;
@@ -218,12 +213,12 @@ body {
 .thoughts {
   position: absolute;
   width: 600px;
-  top: -70px;
+  bottom: 300px;
   right: 320px;
   z-index: 4;
 }
 .wave {
-  top: 308px;
+  bottom: 100px;
   left: 5px;
   position: absolute;
   z-index: 2;
@@ -231,14 +226,14 @@ body {
 }
 .ocean {
   position: absolute;
-  top: -100px;
+  bottom: 100px;
   z-index: 1;
 }
 .beach {
   position: absolute;
   width: 100%;
-  height: 415px;
-  top: 310px;
+  height: 300px;
+  bottom: 0px;
   background: linear-gradient(#f6d7b0, #f2d2a9, #dbc090);
 }
 
@@ -247,6 +242,7 @@ body {
   z-index: 3;
   height: 500px;
   right: 0;
+  bottom: 150px;
 }
 .shell {
   position: absolute;
@@ -277,15 +273,14 @@ body {
   position: absolute;
   width: 200px;
   height: 150px;
-  right: 600px;
-  bottom: 40px;
-  top: 100px;
+  right: 700px;
+  bottom: 110px;
 }
 .person {
   position: absolute;
   width: 300px;
   height: 600px;
-  top: -130px;
+  bottom: -100px;
   right: 120px;
   z-index: 4;
 }
@@ -294,12 +289,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
-  background: linear-gradient(#dbc090, #d5b780, #d0ae70);
+  background: linear-gradient(#e4ca9a, #f6d7b0, #f2d2a9);
   height: 100vh;
   position: relative;
 }
+/* .seperator{
+  height: 100px;
+  margin: 0;
+  padding: 0;
+} */
 .my_pr_section_title {
   margin: 0;
   padding: 0;
@@ -335,6 +335,7 @@ body {
   width: 40%;
   height: 400px;
   background-color: #b4b1b0;
+  box-shadow: 5px 8px 8px 5px rgb(197, 194, 194);
 }
 .project_title {
   text-decoration: none;
@@ -366,7 +367,7 @@ body {
   position: absolute;
   top: 70px;
   animation: text_fall 1s forwards;
-  background: rgba(65, 126, 67, 0.3);
+  background: rgba(17, 41, 18, 0.3);
   box-shadow: 0 3px 10px rgb(233, 230, 230);
   border: none;
   border-radius: 10px;
@@ -379,6 +380,17 @@ body {
   padding: 10px;
   margin: 0;
 }
+.no_pointer {
+  cursor: not-allowed;
+}
+
+.project-tile:hover .img {
+  opacity: 0.6;
+}
+.project-tile:hover .on_click {
+  opacity: 1;
+  display: block;
+}
 .decor {
   width: 100px;
   height: 90px;
@@ -389,7 +401,7 @@ body {
   width: 50px;
   height: 50px;
 }
-/* .shell1 {
+.shell1 {
   left: 10px;
   top: 50px;
 }
@@ -407,7 +419,7 @@ body {
   height: 150px;
   top: 40px;
   right: 30px;
-} */
+}
 .link {
   background-color: #b5dfeb;
   height: 10vh;
@@ -462,17 +474,6 @@ body {
   transition: 1s;
   width: 200px;
   text-shadow: 1px 2px 3px rgb(255, 255, 255);
-}
-.no_pointer {
-  cursor: not-allowed;
-}
-
-.project-tile:hover .img {
-  opacity: 0.6;
-}
-.project-tile:hover .on_click {
-  opacity: 1;
-  display: block;
 }
 
 @keyframes upperCloudMovement {
@@ -561,5 +562,199 @@ body {
   }
   100% {
     transform: translateY(135px);
+  }
+}
+@media screen and (max-width: 800px) {
+  .sun {
+    height: 300px;
+  }
+
+  .upper_cloud {
+    height: 80px;
+    padding: 0px;
+  }
+  .cloud-section2 {
+    top: 70px;
+  }
+  .cloud_a {
+    animation: upperCloudMovement linear 12s infinite;
+    animation-delay: 0s;
+  }
+  .cloud_b {
+    display: none;
+  }
+  .cloud_c {
+    animation: upperCloudMovement linear 12s infinite;
+    animation-delay: 4s;
+  }
+  .cloud_d {
+    display: none;
+  }
+  .cloud_e {
+    animation: upperCloudMovement linear 12s infinite;
+    animation-delay: 8s;
+  }
+  .cloud_f {
+    display: none;
+  }
+  .cloud_g {
+    animation: upperCloudMovement linear 12s infinite;
+    animation-delay: 12s;
+  }
+  .cloud_h {
+    display: none;
+  }
+  .cloud_i {
+    animation: upperCloudMovement linear 12s infinite;
+    animation-delay: 16s;
+  }
+  .cloud {
+    height: 80px;
+    padding: 0px;
+  }
+  .introduction {
+    position: absolute;
+    bottom: 317px;
+    right: 130px;
+    z-index: 3;
+    background-color: white;
+    font-weight: 100;
+    width: 225px;
+    text-align: center;
+    height: 110px;
+    border-radius: 57%;
+    opacity: 0.5;
+  }
+  .introduction h1 {
+    position: absolute;
+    top: 40px;
+    right: 18px;
+    font-size: 11px;
+    color: rgb(122, 55, 223);
+    font-family: monospace;
+    padding: 3px;
+    overflow: hidden;
+    margin: 0 auto;
+    white-space: nowrap;
+    animation: typing 3.5s steps(20, end);
+    /* border-right: .15em solid orange;  */
+  }
+  .thoughts {
+    position: absolute;
+    width: 230px;
+    bottom: 270px;
+    right: 130px;
+    z-index: 4;
+  }
+  .wave {
+    bottom: 250px;
+    left: 5px;
+    position: absolute;
+    z-index: 2;
+    animation: waveMovement linear 3s infinite;
+  }
+  .ocean {
+    position: absolute;
+    bottom: 170px;
+    z-index: 1;
+    bottom: 250px;
+  }
+  .palm_tree {
+    position: absolute;
+    z-index: 3;
+    height: 250px;
+    right: 0;
+    bottom: 160px;
+  }
+  .shell {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+  .shell_a {
+  
+    right: 200px;
+    bottom: 50px;
+  }
+  .shell_b {
+   
+    right: 250px;
+    bottom: 50px;
+  }
+  .shell_c {
+   
+    right: 200px;
+    bottom: 30px;
+  }
+  .shell_d {
+  
+    right: 100px;
+    bottom: 10px;
+  }
+  .sand_tower {
+    position: absolute;
+    width: 100px;
+    height: 130px;
+    right:50px;
+    bottom: 10px;
+ 
+  }
+  .person {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    bottom:-20px;
+    right: 20px;
+    z-index: 4;
+  }
+  .project_dispay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+  }
+  .coconut {
+    width: 20px;
+    height: 20px;
+  }
+  .my_pr_section_title{
+    font-size:30px ;
+  }
+  .project_dispay {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+  }
+  
+  .project-tile {
+    width: 90%;
+    height: 230px;
+  }
+  .img {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    border-radius: 10px;
+    cursor: auto;
+    object-fit: contain;
+  }
+
+  .on_click {
+    display: none;
+    z-index: 2;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    animation: text_fall 1s forwards;
+    background: rgba(17, 41, 18, 0.3);
+    box-shadow: 0 3px 10px rgb(233, 230, 230);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
   }
 }
