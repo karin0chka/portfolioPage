@@ -11,11 +11,25 @@
     ></script>
   </head>
   <body>
-    <nav id="navbar">
-      <a href="#welcome-section">About</a>
-      <a href="#projects">My projects</a>
-      <a href="#profile-link">Contact</a>
-    </nav>
+    <header>
+      <nav id="navbar">
+        <a href="#welcome-section">About</a>
+        <a href="#projects">My projects</a>
+        <a href="#profile-link">Contact</a>
+      </nav>
+      <nav id="hamburger_menu">
+        <button class="hamburger_menu_btn">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+        <div class="menu_links open">
+          <a href="#welcome-section" class="page_link">About</a>
+          <a href="#projects" class="page_link">My projects</a>
+          <a href="#profile-link" class="page_link">Contact</a>
+        </div>
+      </nav>
+    </header>
     <main>
       <section id="welcome-section">
         <div class="sky">
@@ -113,13 +127,15 @@
           />
           <img src="./svg/person.svg" alt="person" class="person" />
         </div>
+        <div class="seperatior">
+          <img src="./svg/seperator.svg" alt="flowers" class="seperator decor" />
+          <!-- <img src="./svg/shell1.svg" alt="shell" class="shell1 decor" />
+          <img src="./svg/shell2.svg" alt="shell" class="shell2 decor" />
+          <img src="./svg/shell3.svg" alt="shell" class="shell3 decor" /> -->
+          <img src="./svg/trop_flowers.svg" alt="tropical orange hibiscus leaves flower" class="trop_flower decor" />
+        </div>
       </section>
       <section id="projects">
-        <!-- <img src="./svg/seperator.svg" alt="flowers" class="seperator" /> -->
-        <!-- <img src="./svg/shell1.svg" alt="shell" class="shell1 decor" />
-        <img src="./svg/shell2.svg" alt="shell" class="shell2 decor" />
-        <img src="./svg/shell3.svg" alt="shell" class="shell3 decor" />
-        <img src="./svg/trop_flowers.svg" alt="tropical orange hibiscus leaves flower" class="trop_flower" /> -->
         <h1 class="my_pr_section_title">
           <img src="./svg/coconut.svg" alt="coconut" class="coconut" />
           My projects
@@ -195,5 +211,22 @@
         </div>
       </section>
     </footer>
+    <script>
+      document
+        .querySelector(".hamburger_menu_btn")
+        .addEventListener("click", openMenu);
+
+      function openMenu() {
+        document.querySelector(".menu_links").classList.toggle("open");
+      }
+
+      document
+        .querySelector(".menu_links")
+        .addEventListener("click", closeMenu);
+
+      function closeMenu() {
+        document.querySelector(".menu_links").classList.remove("open");
+      }
+    </script>
   </body>
 </html>

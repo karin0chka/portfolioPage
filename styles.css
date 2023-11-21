@@ -1,8 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0;
@@ -47,7 +50,7 @@ body {
   padding: 12px;
   box-sizing: border-box;
   text-shadow: 1px 1px 1px white;
-  height: 4vh;
+  height: 40px;
   z-index: 6;
   box-shadow: 5px 5px 15px silver;
 }
@@ -55,6 +58,13 @@ body {
   text-decoration: none;
   color: white;
 }
+#hamburger_menu{
+  display:none;
+}
+.menu_links, .open{
+  display:none;
+}
+
 #welcome-section {
   position: relative;
   height: 100vh;
@@ -68,7 +78,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  gap:0px;
+  gap: 0px;
 }
 
 /* .sun_rays {
@@ -96,7 +106,6 @@ body {
   height: 100px;
 }
 
-
 .cloud-section {
   top: -90px;
   margin: 0;
@@ -106,8 +115,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   height: 100px;
-  gap:0px;
-
+  gap: 0px;
 }
 
 .cloud-section2 {
@@ -227,14 +235,14 @@ body {
 .ocean {
   position: absolute;
   bottom: 100px;
-  z-index: 1;
+  z-index: 4;
 }
 .beach {
   position: absolute;
   width: 100%;
   height: 300px;
   bottom: 0px;
-  background: linear-gradient(#f6d7b0, #f2d2a9, #dbc090);
+  background: linear-gradient(#f6d7b0, #f2d2a9, #e2ca9f);
 }
 
 .palm_tree {
@@ -256,7 +264,7 @@ body {
 }
 .shell_b {
   top: 200px;
-  right: 500px;
+  right: 400px;
   bottom: 50px;
 }
 .shell_c {
@@ -272,9 +280,9 @@ body {
 .sand_tower {
   position: absolute;
   width: 200px;
-  height: 150px;
-  right: 700px;
-  bottom: 110px;
+  height: 120px;
+  right: 500px;
+  bottom: 90px;
 }
 .person {
   position: absolute;
@@ -295,11 +303,7 @@ body {
   height: 100vh;
   position: relative;
 }
-/* .seperator{
-  height: 100px;
-  margin: 0;
-  padding: 0;
-} */
+
 .my_pr_section_title {
   margin: 0;
   padding: 0;
@@ -383,6 +387,10 @@ body {
 .no_pointer {
   cursor: not-allowed;
 }
+.coconut {
+  width: 50px;
+  height: 50px;
+}
 
 .project-tile:hover .img {
   opacity: 0.6;
@@ -393,32 +401,30 @@ body {
 }
 .decor {
   width: 100px;
-  height: 90px;
+  height: 60px;
   position: absolute;
   z-index: 3;
+  bottom: 0;
 }
-.coconut {
-  width: 50px;
-  height: 50px;
+.seperator{
+  left:30px;
+  bottom: -30px;
 }
 .shell1 {
-  left: 10px;
-  top: 50px;
+  left:800px;
+  bottom: 20px;
 }
 .shell2 {
-  right: 100px;
-  bottom: 50px;
+  left:600px;
+  bottom: -10px;
 }
 .shell3 {
-  left: 100px;
-  bottom: 200px;
+  left:200px;
+  bottom: 30px;
 }
 .trop_flower {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 40px;
   right: 30px;
+  bottom: -20px;
 }
 .link {
   background-color: #b5dfeb;
@@ -564,9 +570,86 @@ body {
     transform: translateY(135px);
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+  }
   .sun {
     height: 300px;
+  }
+  #navbar {
+    display: none;
+  }
+  #hamburger_menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 10;
+    background-color: #b4b1b0;
+    box-shadow: 5px 5px 15px silver;
+  }
+  .hamburger_menu_btn {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    border: none;
+    right: 20px;
+    top: 5px;
+    background-color: unset;
+  }
+
+  .hamburger_menu_btn div {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 5px 10px 4px 0px;
+    cursor: pointer;
+  }
+  .menu_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    width: 100%;
+    top: -50vh;
+    opacity: 0;
+    padding: 12px;
+  }
+  .page_link {
+    color: rgb(78, 73, 73);
+    padding-block: 10px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .menu_links.open {
+    top: 40px;
+    opacity: 1;
+  }
+
+
+  #welcome-section {
+    height: 100vh;
+  }
+  .cloud-section {
+    position: absolute;
+    top: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100px;
+    gap: 0px;
   }
 
   .upper_cloud {
@@ -574,7 +657,8 @@ body {
     padding: 0px;
   }
   .cloud-section2 {
-    top: 70px;
+    position: absolute;
+    top: 100px;
   }
   .cloud_a {
     animation: upperCloudMovement linear 12s infinite;
@@ -672,22 +756,18 @@ body {
     height: 20px;
   }
   .shell_a {
-  
     right: 200px;
     bottom: 50px;
   }
   .shell_b {
-   
     right: 250px;
     bottom: 50px;
   }
   .shell_c {
-   
     right: 200px;
     bottom: 30px;
   }
   .shell_d {
-  
     right: 100px;
     bottom: 10px;
   }
@@ -695,15 +775,37 @@ body {
     position: absolute;
     width: 100px;
     height: 130px;
-    right:50px;
+    right: 50px;
     bottom: 10px;
- 
+  }
+  .decor{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: -10px;
+    z-index: 1;
+  }
+  .seperator{
+    right: 10px;
+  }
+  .shell1{
+    right: 10px;
+  }
+  .shell2{
+    right: 10px;
+  }
+  .shell3{
+    right: 20px;
+  }
+  .trop_flower{
+    right: 10px;
+
   }
   .person {
     position: absolute;
     width: 200px;
     height: 400px;
-    bottom:-20px;
+    bottom: -20px;
     right: 20px;
     z-index: 4;
   }
@@ -718,8 +820,8 @@ body {
     width: 20px;
     height: 20px;
   }
-  .my_pr_section_title{
-    font-size:30px ;
+  .my_pr_section_title {
+    font-size: 30px;
   }
   .project_dispay {
     display: flex;
@@ -727,14 +829,14 @@ body {
     /* justify-content: space-evenly; */
     align-items: center;
   }
-  
+
   .project-tile {
     width: 90%;
     height: 230px;
   }
   .img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     margin: 0;
     padding: 0;
     opacity: 1;
@@ -756,5 +858,14 @@ body {
     border-radius: 10px;
     cursor: pointer;
     box-sizing: border-box;
+  }
+  .gitHubLink:hover .hoverTextGitHub,
+  .linkedinLink:hover .hoverTextLinkedin {
+    display: block;
+    color: white;
+    font-size: 10px;
+    transition: 1s;
+    width: 150px;
+    text-shadow: 1px 2px 3px rgb(255, 255, 255);
   }
 }
